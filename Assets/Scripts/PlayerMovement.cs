@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] string playerID = "P1";
 
     // Private fields
+    // Can the player move?
+    bool canMove = true;
     // Horizontal input
     float horizontalInput;
     // Vertical input
@@ -27,6 +29,20 @@ public class PlayerMovement : MonoBehaviour
     string horizontalAxis;
     // Name of vertical movement axis
     string verticalAxis;
+
+    // Properties for access in other classes
+    public bool ShouldMove
+    {
+        get
+        {
+            return canMove;
+        }
+
+        set
+        {
+            canMove = value;
+        }
+    }
 
 	// Use this for initialization
 	void Start () 
@@ -44,7 +60,8 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-        Move();
+        if(canMove)
+            Move();
 	}
 
     // Checks input and moves player
