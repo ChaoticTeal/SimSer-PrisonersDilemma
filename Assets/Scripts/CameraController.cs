@@ -40,11 +40,15 @@ public class CameraController : MonoBehaviour
 
     private void Move()
     {
+        totalY = 0f;
         // Add up all target vertical positions
         foreach(Transform t in targets)
             totalY += t.position.y;
         // Divide by number of targets to find average
         midY = totalY / totalTargets;
+        // Constrain position
+        midY = Mathf.Min(midY, maxY);
+        midY = Mathf.Max(midY, minY);
         // Set up new position vector
         newPosition = new Vector3(transform.position.x, midY, transform.position.z);
         // Move to average vertical position
