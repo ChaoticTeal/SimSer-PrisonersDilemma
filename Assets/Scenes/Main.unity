@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 129252773}
   - component: {fileID: 129252772}
   - component: {fileID: 129252771}
+  - component: {fileID: 129252776}
   - component: {fileID: 129252775}
   - component: {fileID: 129252774}
   m_Layer: 0
@@ -238,6 +239,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &129252776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 129252770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda0cc9ff89a4a44f82b25cf943cc11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchRadius: 1
+  furnitureLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  playerID: P1
 --- !u!1 &170635833
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,6 +393,7 @@ GameObject:
   - component: {fileID: 357372786}
   - component: {fileID: 357372788}
   - component: {fileID: 357372787}
+  - component: {fileID: 357372789}
   m_Layer: 0
   m_Name: P2_Gate
   m_TagString: Untagged
@@ -465,6 +483,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+<<<<<<< HEAD
 --- !u!1 &481080369
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,10 +538,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
 --- !u!114 &481080372
+=======
+--- !u!114 &357372789
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 481080369}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -559,6 +582,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+=======
+  m_GameObject: {fileID: 357372785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f2d6414e473274c978bb36137a7406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOne: {fileID: 129252776}
+  playerTwo: {fileID: 1326666674}
+  playerGate: 2
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
 --- !u!1 &548348990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3130,8 +3164,12 @@ GameObject:
   - component: {fileID: 651317303}
   - component: {fileID: 651317302}
   - component: {fileID: 651317304}
+<<<<<<< HEAD
   - component: {fileID: 651317305}
   m_Layer: 0
+=======
+  m_Layer: 9
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
   m_Name: P1_Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3228,6 +3266,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 651317300}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: b6136a5750b0ec64ab89800577606491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -3257,6 +3296,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+=======
+  m_Script: {fileID: 11500000, guid: c4cc424dc4282594f858868fcadafbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
 --- !u!1 &790339917
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,8 +3312,12 @@ GameObject:
   - component: {fileID: 790339920}
   - component: {fileID: 790339919}
   - component: {fileID: 790339921}
+<<<<<<< HEAD
   - component: {fileID: 790339922}
   m_Layer: 0
+=======
+  m_Layer: 9
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
   m_Name: P1_Couch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3366,6 +3414,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 790339917}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: b6136a5750b0ec64ab89800577606491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -3469,6 +3518,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 790746868}
+=======
+  m_Script: {fileID: 11500000, guid: c4cc424dc4282594f858868fcadafbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
 --- !u!1 &1016698496
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,8 +3534,12 @@ GameObject:
   - component: {fileID: 1016698499}
   - component: {fileID: 1016698498}
   - component: {fileID: 1016698500}
+<<<<<<< HEAD
   - component: {fileID: 1016698501}
   m_Layer: 0
+=======
+  m_Layer: 9
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
   m_Name: P2_Cabinet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3578,6 +3636,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1016698496}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: b6136a5750b0ec64ab89800577606491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -3607,6 +3666,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+=======
+  m_Script: {fileID: 11500000, guid: c4cc424dc4282594f858868fcadafbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
 --- !u!1 &1177882521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3615,6 +3679,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1177882522}
+  - component: {fileID: 1177882523}
   m_Layer: 0
   m_Name: P2_Furniture
   m_TagString: Untagged
@@ -3639,6 +3704,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1177882523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1177882521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4125295835229984e9c0a48647b2105a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furniture:
+  - {fileID: 2070581830}
+  - {fileID: 1676179430}
+  - {fileID: 1016698500}
+  player: {fileID: 1326666674}
 --- !u!1 &1179987381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3647,6 +3728,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1179987382}
+  - component: {fileID: 1179987383}
   m_Layer: 0
   m_Name: P1_Furniture
   m_TagString: Untagged
@@ -3671,6 +3753,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1179987383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1179987381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4125295835229984e9c0a48647b2105a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furniture:
+  - {fileID: 651317304}
+  - {fileID: 790339921}
+  - {fileID: 1203950612}
+  player: {fileID: 129252776}
 --- !u!1 &1203950608
 GameObject:
   m_ObjectHideFlags: 0
@@ -3682,8 +3780,12 @@ GameObject:
   - component: {fileID: 1203950611}
   - component: {fileID: 1203950610}
   - component: {fileID: 1203950612}
+<<<<<<< HEAD
   - component: {fileID: 1203950613}
   m_Layer: 0
+=======
+  m_Layer: 9
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
   m_Name: P1_Cabinet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3780,6 +3882,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1203950608}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: b6136a5750b0ec64ab89800577606491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -3979,6 +4082,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+=======
+  m_Script: {fileID: 11500000, guid: c4cc424dc4282594f858868fcadafbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
 --- !u!1 &1233517022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3989,6 +4097,7 @@ GameObject:
   - component: {fileID: 1233517023}
   - component: {fileID: 1233517025}
   - component: {fileID: 1233517024}
+  - component: {fileID: 1233517026}
   m_Layer: 0
   m_Name: P1_Gate
   m_TagString: Untagged
@@ -4078,6 +4187,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1233517026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1233517022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f2d6414e473274c978bb36137a7406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOne: {fileID: 129252776}
+  playerTwo: {fileID: 1326666674}
+  playerGate: 1
 --- !u!1 &1326666668
 GameObject:
   m_ObjectHideFlags: 0
@@ -4088,6 +4211,7 @@ GameObject:
   - component: {fileID: 1326666673}
   - component: {fileID: 1326666672}
   - component: {fileID: 1326666671}
+  - component: {fileID: 1326666674}
   - component: {fileID: 1326666670}
   - component: {fileID: 1326666669}
   m_Layer: 0
@@ -4203,6 +4327,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1326666674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1326666668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda0cc9ff89a4a44f82b25cf943cc11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchRadius: 1
+  furnitureLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  playerID: P2
 --- !u!1 &1560840164
 GameObject:
   m_ObjectHideFlags: 0
@@ -5858,8 +5998,12 @@ GameObject:
   - component: {fileID: 1676179429}
   - component: {fileID: 1676179428}
   - component: {fileID: 1676179430}
+<<<<<<< HEAD
   - component: {fileID: 1676179431}
   m_Layer: 0
+=======
+  m_Layer: 9
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
   m_Name: P2_Couch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5956,6 +6100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1676179426}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: b6136a5750b0ec64ab89800577606491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -5985,6 +6130,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+=======
+  m_Script: {fileID: 11500000, guid: c4cc424dc4282594f858868fcadafbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
 --- !u!1 &1680926776
 GameObject:
   m_ObjectHideFlags: 0
@@ -6275,8 +6425,12 @@ GameObject:
   - component: {fileID: 2070581829}
   - component: {fileID: 2070581828}
   - component: {fileID: 2070581830}
+<<<<<<< HEAD
   - component: {fileID: 2070581831}
   m_Layer: 0
+=======
+  m_Layer: 9
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
   m_Name: P2_Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6373,6 +6527,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2070581826}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: b6136a5750b0ec64ab89800577606491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -6402,3 +6557,8 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+=======
+  m_Script: {fileID: 11500000, guid: c4cc424dc4282594f858868fcadafbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> e87c005edade819e7d9b38e8a88be303fd405f83
