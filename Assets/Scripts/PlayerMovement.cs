@@ -21,13 +21,16 @@ public class PlayerMovement : MonoBehaviour
     float verticalInput;
     // Player Rigidbody
     Rigidbody2D rigidbody;
+    // Name of cancel button
+    string cancelButton;
+    // Name of confirm button
+    string confirmButton;
     // Name of horizontal movement axis
     string horizontalAxis;
     // Name of vertical movement axis
     string verticalAxis;
 
     // Properties for access in other classes
-    // Can the player move?
     public bool ShouldMove
     {
         get
@@ -47,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
         // Set axis and button names - this allows the code to work for either player
         horizontalAxis = string.Format("{0}-Horizontal", playerID);
         verticalAxis = string.Format("{0}-Vertical", playerID);
+        confirmButton = string.Format("{0}-Confirm", playerID);
+        cancelButton = string.Format("{0}-Cancel", playerID);
 
         // Get reference to rigidbody
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
