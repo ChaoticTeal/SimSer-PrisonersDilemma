@@ -19,6 +19,7 @@ public class Gate : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+        CheckOpen();
         if (gateOpen)
             gameObject.SetActive(false);
 	}
@@ -34,15 +35,19 @@ public class Gate : MonoBehaviour
                     // If player 1 found the key and the safe, or if player 2 traded the key, open
                     if (playerOne.FoundKey && playerOne.FoundSafe ||
                         playerTwo.TradedKey)
+                    {
                         gateOpen = true;
+                    }
                     break;
                 }
             case 2:
                 {
                     // If player 2 found the key and the safe, or if player 1 traded the key, open
-                    if (playerOne.FoundKey && playerOne.FoundSafe ||
-                        playerTwo.TradedKey)
+                    if (playerTwo.FoundKey && playerTwo.FoundSafe ||
+                        playerOne.TradedKey)
+                    {
                         gateOpen = true;
+                    }
                     break;
                 }
         }

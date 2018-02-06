@@ -14,33 +14,29 @@ public class PlayerMovement : MonoBehaviour
 
     // Private fields
     // Can the player move?
-    bool canMove = true;
+    bool canMove_UseProperty = true;
     // Horizontal input
     float horizontalInput;
     // Vertical input
     float verticalInput;
     // Player Rigidbody
     Rigidbody2D rigidbody;
-    // Name of cancel button
-    string cancelButton;
-    // Name of confirm button
-    string confirmButton;
     // Name of horizontal movement axis
     string horizontalAxis;
     // Name of vertical movement axis
     string verticalAxis;
 
     // Properties for access in other classes
-    public bool ShouldMove
+    public bool CanMove
     {
         get
         {
-            return canMove;
+            return canMove_UseProperty;
         }
 
         set
         {
-            canMove = value;
+            canMove_UseProperty = value;
         }
     }
 
@@ -50,8 +46,6 @@ public class PlayerMovement : MonoBehaviour
         // Set axis and button names - this allows the code to work for either player
         horizontalAxis = string.Format("{0}-Horizontal", playerID);
         verticalAxis = string.Format("{0}-Vertical", playerID);
-        confirmButton = string.Format("{0}-Confirm", playerID);
-        cancelButton = string.Format("{0}-Cancel", playerID);
 
         // Get reference to rigidbody
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
@@ -60,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-        if(canMove)
+        if(CanMove)
             Move();
 	}
 

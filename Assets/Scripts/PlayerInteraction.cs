@@ -75,29 +75,47 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (furniture[0].GetComponent<InteractibleFurniture>().HasKey)
             {
+                furniture[0].GetComponent<InteractibleFurniture>().HasKey = false;
                 Debug.Log("Key");
                 foundKey = true;
                 // TODO - Write key popup logic
                 // Confirm should be trade key, cancel should be keep key
-                tradedKey = Choice();
+                StartCoroutine(TradeChoice());
             }
             else if(furniture[0].GetComponent<InteractibleFurniture>().HasSafe && foundKey && !tradedKey)
             {
+                furniture[0].GetComponent<InteractibleFurniture>().HasSafe = false;
                 // TODO - safe popup logic
                 Debug.Log("Safe");
+                foundSafe = true;
             }
         }
     }
 
-    bool Choice()
+    IEnumerator TradeChoice()
     {
         // Infinitely loop until a decision is made - this might be a terrible idea
-        do
+        // Also disable movement for the active player
+        gameObject.GetComponent<PlayerMovement>().CanMove = false;
+        bool chosen = false;
+        Debug.Log(playerID + " must choose what to do with the key.");
+        yield return new WaitForSeconds(1.0f);
+        while (!chosen)
         {
             if (Input.GetButtonDown(confirmButton))
-                return true;
+            {
+                tradedKey = true;
+                chosen = true;
+                Debug.Log(playerID + " traded the key.");
+            }
             else if (Input.GetButtonDown(cancelButton))
-                return false;
-        } while (true);
+            {
+                tradedKey = false;
+                chosen = true;
+                Debug.Log(playerID + "kept the key.");
+            }
+            yield return null;
+        }
+        gameObject.GetComponent<PlayerMovement>().CanMove = true;
     }
 }

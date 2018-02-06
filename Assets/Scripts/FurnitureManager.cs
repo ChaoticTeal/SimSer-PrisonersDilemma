@@ -19,12 +19,10 @@ public class FurnitureManager : MonoBehaviour
     // Use this for initialization
     void Start () 
 	{
-        // Initialize the RNG
-        Random.InitState((int)Time.time);
         // Randomly generate an element number to hide the key
         keyNumber = Randomize();
         furniture[keyNumber].HasKey = true;
-        Debug.Log(keyNumber);
+        Debug.Log("Key " + player + " at element #" + keyNumber);
     }
 	
 	// Update is called once per frame
@@ -42,6 +40,7 @@ public class FurnitureManager : MonoBehaviour
     {
         // Randomly generate from a range of numbers
         int rand = Mathf.RoundToInt(Random.Range(1, furniture.Count * 10));
+        Debug.Log("Random number: " + rand);
         // Return the remainder when divided by the number of elements in the list
         // This will always return a number between 0 and the last element's index
         return rand % furniture.Count;
@@ -57,6 +56,6 @@ public class FurnitureManager : MonoBehaviour
         // Same procedure as the key, randomly decide which element should have the safe and hide it
         safeNumber = Randomize();
         furniture[safeNumber].HasSafe = true;
-        Debug.Log(safeNumber);
+        Debug.Log("Safe " + player + " at element #" + safeNumber);
     }
 }
