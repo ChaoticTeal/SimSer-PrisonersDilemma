@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerInteraction : MonoBehaviour 
 {
@@ -24,6 +25,8 @@ public class PlayerInteraction : MonoBehaviour
     Text mainInputField;
     [SerializeField]
     Dropdown answerToAssessment;
+    [SerializeField]
+    string nextScene;
 
 
     // Private fields
@@ -83,6 +86,12 @@ public class PlayerInteraction : MonoBehaviour
         dropBoxValue = answerToAssessment.value;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Finish")
+            SceneManager.LoadScene(nextScene);
+    }
+
     // Check for furniture in range and search furniture for relevant items
     void Check()
     {
@@ -92,9 +101,7 @@ public class PlayerInteraction : MonoBehaviour
             if (furniture[0].GetComponent<InteractibleFurniture>().HasKey)
             {
                 furniture[0].GetComponent<InteractibleFurniture>().HasKey = false;
-                Debug.Log("Key");
                 foundKey = true;
-                // TODO - Write key popup logic
                 keySafeCanvas.enabled = true;
                 mainInputField.text = "Typically the end result of the Prisoners Dilemma is both criminals placing their self interest before the groups. " +
                     "Despite how it appears, it's actually the most logical answer since personal interest option is far more desirable. " +
@@ -106,14 +113,12 @@ public class PlayerInteraction : MonoBehaviour
             else if(furniture[0].GetComponent<InteractibleFurniture>().HasSafe && foundKey && !tradedKey)
             {
                 furniture[0].GetComponent<InteractibleFurniture>().HasSafe = false;
-                // TODO - safe popup logic
                 keySafeCanvas.enabled = true;
                 inputField.text = "The safe has been found and unlocked. Answer the question to escape.";
                 mainInputField.text = "Prisoner's Dilemma can be interpreted in multiple ways." +
                     " It can be a model that represents the difficulties of getting rational and selfish people to cooperate for the common good. It tests conditions that make cooperating appealing. " +
                     "Another model is a representaion of choosing between a selfish choice and an altruistic one. " +
                     "These modals lead to the idea that the Prisoner's Dilemma has something to say about the nature of morality.";
-                Debug.Log("Safe");
                 StartCoroutine(SafeAssessmentQuestion());
                 
             }
@@ -126,7 +131,6 @@ public class PlayerInteraction : MonoBehaviour
         // Also disable movement for the active player
         gameObject.GetComponent<PlayerMovement>().CanMove = false;
         bool chosen = false;
-        Debug.Log(playerID + " must choose what to do with the key.");
         yield return new WaitForSeconds(1.0f);
         while (!chosen)
         {
@@ -134,14 +138,12 @@ public class PlayerInteraction : MonoBehaviour
             {
                 tradedKey = true;
                 chosen = true;
-                Debug.Log(playerID + " traded the key.");
                 keySafeCanvas.enabled = false;
             }
             else if (Input.GetButtonDown(cancelButton))
             {
                 tradedKey = false;
                 chosen = true;
-                Debug.Log(playerID + "kept the key.");
                 keySafeCanvas.enabled = false;
             }
             yield return null;
@@ -155,7 +157,6 @@ public class PlayerInteraction : MonoBehaviour
         // Also disable movement for the active player
         gameObject.GetComponent<PlayerMovement>().CanMove = false;
         bool chosen = false;
-        Debug.Log(playerID + " must choose an answer.");
         yield return new WaitForSeconds(1.0f);
         questionCanvas.enabled = true;
         

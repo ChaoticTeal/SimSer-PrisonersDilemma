@@ -389,6 +389,7 @@ MonoBehaviour:
   inputField: {fileID: 1368423603}
   mainInputField: {fileID: 582678744}
   answerToAssessment: {fileID: 39456673}
+  nextScene: End
 --- !u!1 &162043408
 GameObject:
   m_ObjectHideFlags: 0
@@ -4082,6 +4083,7 @@ GameObject:
   - component: {fileID: 790746869}
   - component: {fileID: 790746871}
   - component: {fileID: 790746870}
+  - component: {fileID: 790746872}
   m_Layer: 5
   m_Name: Player1Controls
   m_TagString: Untagged
@@ -4146,6 +4148,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 790746868}
+--- !u!114 &790746872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 790746868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &794483588
 GameObject:
   m_ObjectHideFlags: 0
@@ -5434,6 +5450,7 @@ GameObject:
   - component: {fileID: 1222225952}
   - component: {fileID: 1222225954}
   - component: {fileID: 1222225953}
+  - component: {fileID: 1222225955}
   m_Layer: 5
   m_Name: Player2Controls
   m_TagString: Untagged
@@ -5499,6 +5516,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1222225951}
+--- !u!114 &1222225955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1222225951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1229098622
 GameObject:
   m_ObjectHideFlags: 0
@@ -5719,6 +5750,7 @@ GameObject:
   - component: {fileID: 1279203698}
   - component: {fileID: 1279203697}
   - component: {fileID: 1279203696}
+  - component: {fileID: 1279203699}
   m_Layer: 5
   m_Name: P2Text
   m_TagString: Untagged
@@ -5785,6 +5817,20 @@ RectTransform:
   m_AnchoredPosition: {x: 198.1, y: 118.5}
   m_SizeDelta: {x: 111, y: 54.5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1279203699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1279203695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1279756639
 GameObject:
   m_ObjectHideFlags: 0
@@ -5831,7 +5877,7 @@ GameObject:
   - component: {fileID: 1298301055}
   m_Layer: 0
   m_Name: EndGoal
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5845,7 +5891,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6035,6 +6081,7 @@ MonoBehaviour:
   inputField: {fileID: 1279203696}
   mainInputField: {fileID: 582678744}
   answerToAssessment: {fileID: 1451719306}
+  nextScene: End
 --- !u!1 &1368423602
 GameObject:
   m_ObjectHideFlags: 0
@@ -6045,6 +6092,7 @@ GameObject:
   - component: {fileID: 1368423605}
   - component: {fileID: 1368423604}
   - component: {fileID: 1368423603}
+  - component: {fileID: 1368423606}
   m_Layer: 5
   m_Name: P1Text
   m_TagString: Untagged
@@ -6109,6 +6157,20 @@ RectTransform:
   m_AnchoredPosition: {x: -193.3, y: 120.7}
   m_SizeDelta: {x: 111, y: 54.5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1368423606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1368423602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1439761177
 GameObject:
   m_ObjectHideFlags: 0
@@ -8240,6 +8302,7 @@ GameObject:
   - component: {fileID: 1577541106}
   - component: {fileID: 1577541108}
   - component: {fileID: 1577541107}
+  - component: {fileID: 1577541109}
   m_Layer: 5
   m_Name: InteractText
   m_TagString: Untagged
@@ -8304,6 +8367,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1577541105}
+--- !u!114 &1577541109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577541105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1587736179
 GameObject:
   m_ObjectHideFlags: 0
@@ -9184,6 +9261,7 @@ GameObject:
   - component: {fileID: 1973502863}
   - component: {fileID: 1973502865}
   - component: {fileID: 1973502864}
+  - component: {fileID: 1973502866}
   m_Layer: 5
   m_Name: InteractText
   m_TagString: Untagged
@@ -9248,6 +9326,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1973502862}
+--- !u!114 &1973502866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1973502862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2011186702
 GameObject:
   m_ObjectHideFlags: 0
