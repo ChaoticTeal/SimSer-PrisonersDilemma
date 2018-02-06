@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour 
 {
@@ -13,6 +14,17 @@ public class PlayerInteraction : MonoBehaviour
     [Tooltip("Must be either P1 or P2")]
     [SerializeField]
     string playerID = "P1";
+    [SerializeField]
+    Canvas keySafeCanvas;
+    [SerializeField]
+    Canvas questionCanvas;
+    [SerializeField]
+    Text inputField;
+    [SerializeField]
+    Text mainInputField;
+    [SerializeField]
+    Dropdown answerToAssessment;
+
 
     // Private fields
     // Has the player found the key?
@@ -25,6 +37,9 @@ public class PlayerInteraction : MonoBehaviour
     string cancelButton;
     // Name of confirm button
     string confirmButton;
+
+    //Dropdown box value
+    int dropBoxValue;
 
     // Properties for access in other classes
     // Has the player found the key?
@@ -65,6 +80,7 @@ public class PlayerInteraction : MonoBehaviour
 	void Update () 
 	{
         Check();
+        dropBoxValue = answerToAssessment.value;
     }
 
     // Check for furniture in range and search furniture for relevant items
@@ -79,15 +95,27 @@ public class PlayerInteraction : MonoBehaviour
                 Debug.Log("Key");
                 foundKey = true;
                 // TODO - Write key popup logic
+                keySafeCanvas.enabled = true;
+                mainInputField.text = "Typically the end result of the Prisoners Dilemma is both criminals placing their self interest before the groups. " +
+                    "Despite how it appears, it's actually the most logical answer since personal interest option is far more desirable. " +
+                    "It's also an example of how crowds are foolish as they are wise; that certain individual's choices are ruinous for the group.";
                 // Confirm should be trade key, cancel should be keep key
                 StartCoroutine(TradeChoice());
+                
             }
             else if(furniture[0].GetComponent<InteractibleFurniture>().HasSafe && foundKey && !tradedKey)
             {
                 furniture[0].GetComponent<InteractibleFurniture>().HasSafe = false;
                 // TODO - safe popup logic
+                keySafeCanvas.enabled = true;
+                inputField.text = "The safe has been found and unlocked. Answer the question to escape.";
+                mainInputField.text = "Prisoner's Dilemma can be interpreted in multiple ways." +
+                    " It can be a model that represents the difficulties of getting rational and selfish people to cooperate for the common good. It tests conditions that make cooperating appealing. " +
+                    "Another model is a representaion of choosing between a selfish choice and an altruistic one. " +
+                    "These modals lead to the idea that the Prisoner's Dilemma has something to say about the nature of morality.";
                 Debug.Log("Safe");
-                foundSafe = true;
+                StartCoroutine(SafeAssessmentQuestion());
+                
             }
         }
     }
@@ -107,12 +135,43 @@ public class PlayerInteraction : MonoBehaviour
                 tradedKey = true;
                 chosen = true;
                 Debug.Log(playerID + " traded the key.");
+                keySafeCanvas.enabled = false;
             }
             else if (Input.GetButtonDown(cancelButton))
             {
                 tradedKey = false;
                 chosen = true;
                 Debug.Log(playerID + "kept the key.");
+                keySafeCanvas.enabled = false;
+            }
+            yield return null;
+        }
+        gameObject.GetComponent<PlayerMovement>().CanMove = true;
+    }
+
+    IEnumerator SafeAssessmentQuestion()
+    {
+        // Infinitely loop until a decision is made - this might be a terrible idea
+        // Also disable movement for the active player
+        gameObject.GetComponent<PlayerMovement>().CanMove = false;
+        bool chosen = false;
+        Debug.Log(playerID + " must choose an answer.");
+        yield return new WaitForSeconds(1.0f);
+        questionCanvas.enabled = true;
+        
+        while (!chosen)
+        {
+            if (dropBoxValue == 2)
+            {
+                foundSafe = true;
+                chosen = true;
+                questionCanvas.enabled = false;
+            }
+            else
+            {
+                
+                chosen = false;
+                
             }
             yield return null;
         }
